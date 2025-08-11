@@ -1,146 +1,246 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rathod Harshil Jitendrabhai - Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harshil Rathod — Portfolio</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#06b6d4;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#071025 0%, var(--bg) 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .container{max-width:1100px;margin:32px auto;padding:24px}
+
+    /* Header */
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:14px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:var(--glass);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px}
+    nav a:hover{background:rgba(255,255,255,0.03);color:#fff}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-top:18px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:28px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+    h1{font-size:clamp(28px,4vw,40px);margin:0 0 8px}
+    .lead{color:var(--muted);margin-bottom:18px}
+    .cta{display:flex;gap:12px}
+    .btn{padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);color:#012;}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:16px;text-align:center}
+    .avatar{width:100px;height:100px;border-radius:14px;background:linear-gradient(135deg,#082032,#0a2540);display:inline-flex;align-items:center;justify-content:center;font-size:28px;color:var(--accent);margin-bottom:12px}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Sections */
+    section{margin-top:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:13px;color:var(--muted)}
+
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .project-title{font-weight:700;margin-bottom:6px}
+    .muted{color:var(--muted)}
+
+    .contact-form{display:grid;gap:12px}
+    .input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    .footer{margin-top:28px;padding-top:18px;border-top:1px dashed rgba(255,255,255,0.03);text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Harshil Rathod</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">HR</div>
+        <div>
+          <div style="font-weight:700">Rathod Harshil Jitendrabhai</div>
+          <div style="font-size:13px;color:var(--muted)">BCA Student · Web Developer · Cybersecurity Enthusiast</div>
         </div>
-    </nav>
-
-    <!-- Header / About -->
-    <section class="container py-5" id="about">
-        <div class="row align-items-center">
-            <div class="col-md-8">
-                <h1 class="display-4">Rathod Harshil Jitendrabhai</h1>
-                <p class="lead">Final Year BCA Student at Monark University</p>
-                <p>I am currently in the 5th semester of the Bachelor of Computer Application (BCA) program at Monark University. I have a strong interest in Cyber Security.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills & Technologies -->
-    <section class="bg-light py-5" id="skills">
-        <div class="container">
-            <h2 class="mb-4">Skills & Technologies</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Programming Languages & Technologies</h5>
-                    <ul>
-                        <li>HTML/CSS</li>
-                        <li>Java</li>
-                        <li>Python</li>
-                    </ul>
-                    <h5>Key Technical Skills</h5>
-                    <ul>
-                        <li>Malware, Phishing, Network Security</li>
-                        <li>Operating Systems (Windows, Linux)</li>
-                        <li>Wireshark (Basic), Kali Linux (Intermediate), Nmap (Beginner)</li>
-                        <li>Python, HTML/CSS</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <h5>Soft Skills</h5>
-                    <ul>
-                        <li>Leadership</li>
-                        <li>Teamwork</li>
-                        <li>Communication</li>
-                    </ul>
-                    <h5>Hobbies / Interests</h5>
-                    <ul>
-                        <li>Reading</li>
-                        <li>Traveling</li>
-                        <li>Natural Photography</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="container py-5" id="projects">
-        <h2 class="mb-4">Major Academic Projects</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Flipkart Smartphone Data Analyst</h5>
-                        <p class="card-text">Technology: Python (Pandas library)</p>
-                        <p class="card-text">Role: Data Analyst</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">WhatsApp Automatic Message Sending Script</h5>
-                        <p class="card-text">Technology: Python (Selenium library)</p>
-                        <p class="card-text">Role: Developer (Automated messaging for 50+ users)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Awards & Certifications -->
-    <section class="bg-light py-5" id="awards">
-        <div class="container">
-            <h2 class="mb-4">Awards, Certifications & Activities</h2>
-            <ul>
-                <li>Cybersecurity & Ethical Hacking (Udemy)</li>
-                <li>Introduction to Cyber Security (CISCO)</li>
-                <li>Sanchalan 2023 (GLS University)</li>
-                <li>Achieved 4th Rank in Ramzat 2024 at Monark University</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Online Profiles -->
-    <section class="container py-5" id="profiles">
-        <h2 class="mb-4">Online Profiles</h2>
+      </div>
+      <nav>
         <ul>
-            <li><strong>GitHub:</strong> <a href="https://github.com/Harshil211" target="_blank">Harshil211</a></li>
-            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/Harshil211" target="_blank">Harshil211</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-    </section>
+      </nav>
+    </header>
 
-    <!-- Contact -->
-    <section class="bg-light py-5" id="contact">
-        <div class="container">
-            <h2 class="mb-4">Contact Information</h2>
-            <ul>
-                <li><strong>Email:</strong> <a href="mailto:rharshil2105@gmail.com">rharshil2105@gmail.com</a></li>
-                <li><strong>Phone:</strong> <a href="tel:+916354360559">+91 63543 60559</a></li>
-                <li><strong>Location:</strong> Ahmedabad</li>
-            </ul>
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-card">
+          <h1>Hi, I'm Harshil Rathod</h1>
+          <div class="lead">Web Developer & Designer · Cyber Security learner — currently in 5th semester of BCA at Monark University. Located in Ahmedabad.</div>
+          <div class="cta">
+            <a class="btn btn-primary" href="#contact">Get In Touch</a>
+            <a class="btn btn-ghost" href="#projects">View Projects</a>
+          </div>
+
+          <div style="margin-top:20px">
+            <strong class="muted">Contact:</strong> <span class="small">rharshil2105@gmail.com · +91 63543 60559</span>
+          </div>
+
+          <div style="margin-top:18px" class="card">
+            <strong>Career Goals</strong>
+            <div class="muted">Aspiring to build a career in Cyber Security, with practical hands-on experience in network security, malware analysis and defensive tools.</div>
+          </div>
         </div>
-    </section>
 
-    <footer class="bg-dark text-white text-center py-3">
-        &copy; 2025 Rathod Harshil Jitendrabhai. All rights reserved.
-    </footer>
+        <aside class="profile-card">
+          <img src="1000207245.jpg" alt="Profile Picture" style="width:100px;height:100px;object-fit:cover;border-radius:50%;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+          <div style="font-weight:700">Harshil Rathod</div>
+          <div class="small">BCA · Monark University</div>
+          <div style="margin-top:12px" class="small">Location: Ahmedabad</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+          <div style="margin-top:14px" class="skill-list">
+            <span class="skill">HTML/CSS</span>
+            <span class="skill">Python</span>
+            <span class="skill">Kali Linux</span>
+            <span class="skill">Wireshark</span>
+            <span class="skill">Nmap</span>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:8px;justify-content:center">
+            <a class="btn btn-ghost" href="https://github.com/Harshil211" target="_blank">GitHub</a>
+            <a class="btn btn-ghost" href="https://linkedin.com/in/Harshil211" target="_blank">LinkedIn</a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <div class="card">
+          <h3>About Me</h3>
+          <p class="muted">I'm a BCA student with a budding focus on cybersecurity and web development. I enjoy learning new tools, working on small automation projects, and creating useful front-end experiences.</p>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h3 style="margin-bottom:12px">Skills</h3>
+        <div class="grid-3">
+          <div class="card">
+            <strong>Technical</strong>
+            <div style="margin-top:10px" class="skill-list">
+              <span class="skill">HTML/CSS</span>
+              <span class="skill">Python</span>
+              <span class="skill">Java</span>
+              <span class="skill">Kali Linux</span>
+              <span class="skill">Wireshark (Basic)</span>
+              <span class="skill">Nmap (Beginner)</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <strong>Projects & Tools</strong>
+            <ul class="muted" style="margin-top:8px">
+              <li>Flipkart Smartphone Data Analyst — Python (pandas)</li>
+              <li>WhatsApp Auto Message Script — Python (Selenium)</li>
+              <li>Sastrasoft placement & interview program</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <strong>Soft Skills</strong>
+            <div style="margin-top:10px" class="muted">Leadership · Teamwork · Communication</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h3 style="margin-bottom:12px">Projects</h3>
+        <div class="projects">
+          <div class="card">
+            <div class="project-title">Flipkart Smartphone Data Analyst</div>
+            <div class="muted">Python · pandas</div>
+            <p style="margin-top:8px" class="muted">Analyzed smartphone pricing and ratings data to find trends and summarize best-value models.</p>
+            <a href="#" class="small muted">Repo / Demo</a>
+          </div>
+
+          <div class="card">
+            <div class="project-title">WhatsApp Auto Message Script</div>
+            <div class="muted">Python · Selenium</div>
+            <p style="margin-top:8px" class="muted">Automated sending messages to multiple contacts — useful for notifications and simple automation tasks.</p>
+            <a href="#" class="small muted">Repo / Demo</a>
+          </div>
+
+          <div class="card">
+            <div class="project-title">Learning: Malware & Network Security</div>
+            <div class="muted">Kali Linux · Wireshark</div>
+            <p style="margin-top:8px" class="muted">Hands-on practice on network tools and basic malware analysis workflows.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h3 style="margin-bottom:12px">Contact</h3>
+        <div class="card">
+          <form class="contact-form" onsubmit="return sendMail(event)">
+            <input class="input" id="name" placeholder="Your name" required />
+            <input class="input" id="email" placeholder="Your email" type="email" required />
+            <textarea id="message" class="input" rows="5" placeholder="Message" required></textarea>
+            <div style="display:flex;gap:8px;justify-content:flex-end">
+              <button class="btn btn-ghost" type="reset">Reset</button>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <div class="footer">
+        © 2025 Harshil Rathod • Built with HTML/CSS • <span class="muted">Ahmedabad, India</span>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Smooth scrolling for local links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const href=a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    })
+
+    function sendMail(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value;
+      const email=document.getElementById('email').value;
+      const message=document.getElementById('message').value;
+      // fallback: open mail client
+      const subject=encodeURIComponent('Portfolio contact from '+name);
+      const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+message);
+      window.location.href = 'mailto:rharshil2105@gmail.com?subject='+subject+'&body='+body;
+      return false;
+    }
+  </script>
 </body>
 </html>
-
