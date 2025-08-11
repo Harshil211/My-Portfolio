@@ -40,7 +40,7 @@
   h1{font-size:clamp(26px,4vw,40px);}
   .lead{color:var(--muted);margin-bottom:18px}
   .cta{display:flex;flex-wrap:wrap;gap:12px}
-  .btn{padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600;transition:0.2s}
+  .btn{padding:8px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600;transition:0.2s; font-size:13px; text-decoration:none; display:inline-block}
   .btn-primary{background:var(--accent);color:#012;}
   .btn-primary:hover{opacity:0.85}
   .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
@@ -92,7 +92,8 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="Resume.pdf" target="_blank">Resume</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -103,16 +104,15 @@
       <section id="home" class="hero">
         <div class="hero-card">
           <h1>Hi, I'm Harshil Rathod</h1>
-          <div class="lead">Web Developer & Designer · Cyber Security learner — currently in 5th semester of BCA at Monark University. Located in Ahmedabad.</div>
+          <div class="lead">Cyber Security learner</div>
+          <div class="lead">Currently in 5th semester of BCA at Monark University. Located in Ahmedabad.</div>
           <div class="cta">
-            <a class="btn btn-primary" href="#contact">Get In Touch</a>
-            <a class="btn btn-ghost" href="#projects">View Projects</a>
+            <a class="btn btn-primary" href="#certifications">View Certifications</a>
+            <a class="btn btn-ghost" href="Resume.pdf" target="_blank">View Resume</a>
           </div>
-
           <div style="margin-top:20px">
             <strong class="muted">Contact:</strong> <span class="small">rharshil2105@gmail.com · +91 63543 60559</span>
           </div>
-
           <div style="margin-top:18px" class="card">
             <strong>Career Goals</strong>
             <div class="muted">Aspiring to build a career in Cyber Security, with practical hands-on experience in network security, malware analysis and defensive tools.</div>
@@ -124,7 +124,6 @@
           <div style="font-weight:700">Harshil Rathod</div>
           <div class="small">BCA · Monark University</div>
           <div style="margin-top:12px" class="small">Location: Ahmedabad</div>
-
           <div style="margin-top:14px" class="skill-list">
             <span class="skill">HTML/CSS</span>
             <span class="skill">Python</span>
@@ -132,7 +131,6 @@
             <span class="skill">Wireshark</span>
             <span class="skill">Nmap</span>
           </div>
-
           <div style="margin-top:12px;display:flex;gap:8px;justify-content:center">
             <a class="btn btn-ghost" href="https://github.com/Harshil211" target="_blank">GitHub</a>
             <a class="btn btn-ghost" href="https://linkedin.com/in/Harshil211" target="_blank">LinkedIn</a>
@@ -147,33 +145,37 @@
         </div>
       </section>
 
+      <section id="certifications">
+        <h3 style="margin-bottom:12px">Certifications</h3>
+        <div class="card">
+          <ul class="muted" style="margin-top:8px; list-style:none; padding:0;">
+            <li style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              Cybersecurity & Ethical Hacking — Udemy
+              <a class="btn btn-primary" href="I2CSUpdate20250803-31-x8inuu.pdf" target="_blank">View</a>
+            </li>
+            <li style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              Introduction to Cyber Security — CISCO
+              <a class="btn btn-primary" href="Resume.pdf" target="_blank">View</a>
+            </li>
+            <li style="display:flex; justify-content:space-between; align-items:center;">
+              Sanchalan 2023 — GLS University
+              <a class="btn btn-primary" href="Resume.pdf" target="_blank">View</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section id="skills">
         <h3 style="margin-bottom:12px">Skills</h3>
-        <div class="grid-3">
-          <div class="card">
-            <strong>Technical</strong>
-            <div style="margin-top:10px" class="skill-list">
-              <span class="skill">HTML/CSS</span>
-              <span class="skill">Python</span>
-              <span class="skill">Java</span>
-              <span class="skill">Kali Linux</span>
-              <span class="skill">Wireshark (Basic)</span>
-              <span class="skill">Nmap (Beginner)</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <strong>Projects & Tools</strong>
-            <ul class="muted" style="margin-top:8px">
-              <li>Flipkart Smartphone Data Analyst — Python (pandas)</li>
-              <li>WhatsApp Auto Message Script — Python (Selenium)</li>
-              <li>Sastrasoft placement & interview program</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <strong>Soft Skills</strong>
-            <div style="margin-top:10px" class="muted">Leadership · Teamwork · Communication</div>
+        <div class="card">
+          <div class="skill-list">
+            <span class="skill">HTML/CSS</span>
+            <span class="skill">Python</span>
+            <span class="skill">Kali Linux</span>
+            <span class="skill">Wireshark</span>
+            <span class="skill">Nmap</span>
+            <span class="skill">Cybersecurity Fundamentals</span>
+            <span class="skill">Network Security</span>
           </div>
         </div>
       </section>
@@ -185,16 +187,12 @@
             <div class="project-title">Flipkart Smartphone Data Analyst</div>
             <div class="muted">Python · pandas</div>
             <p style="margin-top:8px" class="muted">Analyzed smartphone pricing and ratings data to find trends and summarize best-value models.</p>
-            <a href="#" class="small muted">Repo / Demo</a>
           </div>
-
           <div class="card">
             <div class="project-title">WhatsApp Auto Message Script</div>
             <div class="muted">Python · Selenium</div>
             <p style="margin-top:8px" class="muted">Automated sending messages to multiple contacts — useful for notifications and simple automation tasks.</p>
-            <a href="#" class="small muted">Repo / Demo</a>
           </div>
-
           <div class="card">
             <div class="project-title">Learning: Malware & Network Security</div>
             <div class="muted">Kali Linux · Wireshark</div>
@@ -225,23 +223,20 @@
   </div>
 
   <script>
-    // Smooth scrolling for local links
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{
         const href=a.getAttribute('href');
-        if(href.length>1){
+        if(href.length>1 && !href.endsWith(".pdf")){
           e.preventDefault();
           document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
         }
       })
     })
-
     function sendMail(e){
       e.preventDefault();
       const name=document.getElementById('name').value;
       const email=document.getElementById('email').value;
       const message=document.getElementById('message').value;
-      // fallback: open mail client
       const subject=encodeURIComponent('Portfolio contact from '+name);
       const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+message);
       window.location.href = 'mailto:rharshil2105@gmail.com?subject='+subject+'&body='+body;
